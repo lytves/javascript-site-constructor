@@ -1,34 +1,27 @@
 import image from './assets/image.jpg'
+import {Block} from './classes/blocks'
 
 export const model = [
-    {
-        type: 'title', value: 'CMS on pure JavaScript!', options: {
-            tag: 'h2',
-            styles: 'background: #eb425e; color: #fff; text-align: center; padding: 0.5rem'
-        }
-    },
-    {
-        type: 'textColums', value: [
-            'Application on pure JavaScript without 3rd party frameworks',
-            'Using SOLID principles',
-            'Based on WebPack'
-        ], options: {
-            styles: 'padding: 1rem;'
-        }
-    },
-    {
-        type: 'text',
-        value: 'Learning JavaScript is fun and useful, be creative and modern frontend developer!',
-        options: {
+    new Block('title', 'CMS on pure JavaScript!', {
+        tag: 'h2',
+        styles: 'background: #eb425e; color: #fff; text-align: center; padding: 0.5rem'
+    }),
+    new Block('textColums', [
+        'Application on pure JavaScript without 3rd party frameworks',
+        'Using SOLID principles',
+        'Based on WebPack'
+    ], {
+        styles: 'padding: 1rem;'
+    }),
+    new Block('text',
+        '\'Learning JavaScript is fun and useful, be creative and modern frontend developer!\'',
+        {
             styles: 'background: #f5f5f5; color: #2f2f2f; padding: 1rem;'
-        }
-    },
-    {
-        type: 'image', value: image,
-        options: {
+        }),
+    new Block('image', image,
+        {
             styles: 'padding: 1rem; display: flex; justify-content: center;',
             imageStyles: 'height: 200px;',
             alt: 'CMS on pure JavaScript!'
-        }
-    }
+        })
 ]
